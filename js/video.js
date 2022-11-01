@@ -1,6 +1,5 @@
 var video;
 var speed = 1.0;
-var mute = false;
 
 window.addEventListener("load", function() {
 	video = document.getElementById("player1");
@@ -48,16 +47,14 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if(mute == false){
-		video.volume = 0;
+	if(video.muted == false){
+		video.muted = true;
 		document.getElementById("mute").innerHTML = "Unmute";
 		//console.log("muted");
-		mute = true;
 	}
 	else{
 		video.volume = document.getElementById("slider").value / 100;
 		document.getElementById("mute").innerHTML = "Mute";
-		mute = false;
 	}
 });
 
